@@ -4,8 +4,7 @@ Scenario: Mostrar el titulo
 	Given Inicio la aplicacion
 	Then Debo ver "Bienvenido al juego del ahorcado"
 
-#Scenario: Inicio el juego
-#	Given Inicio la aplicacion
-#	When Inicio el juego
-#	Then Debo ver "0-0"
+Scenario: Muestro cantidad letras de la palabra
+	Given Inicio la aplicacion
+	Then Debo ver "_ _ _ _ _ _ _ _ _ _"
 
