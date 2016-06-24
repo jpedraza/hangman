@@ -1,10 +1,18 @@
 <html>
 	<body>
-Bienvenido al juego del ahorcado
-<form>
-Ingrese una letra <input type="text" id="letter">
-</form>
-<% @word.length.times {%>_ <%} %>
+		Bienvenido al juego del ahorcado
+	
+		<form action="/" method="post" >
+			Ingrese una letra <input type="text" name="letter" id="letter">
+			<input type="submit" name="jugar" value="Jugar" />
+		</form>
+	
+		<% if @lastLetter %>
+			La letra ingresada fue: <%= @lastLetter %>
+		<% end %>
+
+		<hr />
+		<% @word.length.times {%>_ <%} %>
 	</body>
 </html>
 

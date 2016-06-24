@@ -14,3 +14,10 @@ Scenario: El usuario puede ingresar una letra
 	Then Debo ver "Ingrese una letra"
 	Then Debo ver elemento con id "letter"
 
+Scenario: El usuario puede ingresar una letra y verla en pantalla
+	Given Inicio la aplicacion
+	When Ingreso la letra "a"
+	And Presiono el boton "jugar"
+	Then Debo ver "La letra ingresada fue: a"
+
+
