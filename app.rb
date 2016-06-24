@@ -1,6 +1,7 @@
 require 'sinatra'
+require "./lib/wordFactory"
 
-@@word = "murcielago"
+@@word = WordFactory.new.getDefault
 
 get '/' do
 	@word = @@word
