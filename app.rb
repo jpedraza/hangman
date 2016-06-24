@@ -1,15 +1,18 @@
 require 'sinatra'
 require "./lib/wordFactory"
 
-@@word = WordFactory.new.getDefault
+@@hiddenWord = WordFactory.new.getDefault
 
 get '/' do
-	@word = @@word
+	@hiddenWord = @@hiddenWord
+	@word = "_ _ _ _ _ _ _ _ _ _"
     erb :index
 end
 
 post '/' do
-	@word = @@word
+	@hiddenWord = @@hiddenWord
 	@lastLetter = params[:letter]
+	@word = "_ _ _ _ _ _ _ a _ _"
+
     erb :index
 end

@@ -20,4 +20,10 @@ Scenario: El usuario puede ingresar una letra y verla en pantalla
 	And Presiono el boton "jugar"
 	Then Debo ver "La letra ingresada fue: a"
 
+Scenario: El usuario puede ingresar una letra y ver si matchea
+	Given Inicio la aplicacion
+	When Ingreso la letra "a"
+	And Presiono el boton "jugar"
+	Then Debo ver "_ _ _ _ _ _ a _ _"
+
 
