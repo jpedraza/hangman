@@ -17,6 +17,6 @@ class LetterEvaluator
 		found
 	end
 	def placeholder
-		@placeholder
+		@placeholder.join " "
 	end
 end
