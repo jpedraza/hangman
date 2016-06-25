@@ -1,18 +1,19 @@
 require 'sinatra'
 require "./lib/wordFactory"
+require "./lib/letterEvaluator"
 
 @@hiddenWord = WordFactory.new.getDefault
+@@letterEvaluator = LetterEvaluator.new(@@hiddenWord)
+
 
 get '/' do
-	@hiddenWord = @@hiddenWord
-	@word = "_ _ _ _ _ _ _ _ _ _"
+	@placeholder = @@letterEvaluator.placeholder.join " "
     erb :index
 end
 
 post '/' do
-	@hiddenWord = @@hiddenWord
 	@lastLetter = params[:letter]
-	@word = "_ _ _ _ _ _ _ a _ _"
-
+	@@letterEvaluator.try(@lastLetter)
+	@placeholder = @@letterEvaluator.placeholder.join " "
     erb :index
 end
