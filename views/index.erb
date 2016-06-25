@@ -19,6 +19,10 @@
 
 		Vidas restantes: <%= @@remainingLives %>
 
+		<% if @@endingMessage %>
+		<hr />
+			<%= @@endingMessage%>
+		<% end %>
+
 	</body>
 </html>
-
