@@ -20,18 +20,17 @@ end
 post '/' do
 	@lastLetter = params[:letter]
 	result = @@letterEvaluator.try(@lastLetter)
+
 	if not result
 		@@remainingLives = @@remainingLives - 1
 		if @@remainingLives < 1
-			gameLost = true
 			@@endingMessage = "Lo siento, ha perdido el juego!"
 		end 
 	end
 
 	@placeholder = @@letterEvaluator.placeholder
 	
-	gameWon = !gameLost and !(@@letterEvaluator.placeholder.include? "_")
-	
+	gameWon = !(@@letterEvaluator.placeholder.include? "_")
 	if gameWon
 		@@endingMessage = "Felicitaciones completo la palabra!"
 	end
